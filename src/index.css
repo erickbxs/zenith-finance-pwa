@@ -1,0 +1,139 @@
+@import "tailwindcss";
+
+:root {
+  --bg-main: #F2F2F7;
+  --bg-secondary: #E5E5EA;
+  --card-bg: #FFFFFF;
+  --card-elevated: #FFFFFF;
+  --divider: #E5E5EA;
+  --text-primary: #000000;
+  --text-secondary: #8E8E93;
+  --nav-glass: rgba(255, 255, 255, 0.78);
+  --modal-bg: #FFFFFF;
+  --hairline: rgba(0, 0, 0, 0.08);
+  --accent-blue: #007AFF;
+  --accent-green: #34C759;
+  --accent-red: #FF3B30;
+  --card-shadow: 0 4px 20px -2px rgba(0, 0, 0, 0.05);
+}
+
+.dark {
+  --bg-main: #0B132B;
+  --bg-secondary: #0D1B2A;
+  --card-bg: #1C2541;
+  --card-elevated: #223055;
+  --divider: #2C3E50;
+  --text-primary: #F8F9FA;
+  --text-secondary: #8D99AE;
+  --nav-glass: rgba(28, 37, 65, 0.82);
+  --modal-bg: #1C2541;
+  --hairline: rgba(255, 255, 255, 0.12);
+  --accent-blue: #0A84FF;
+  --accent-green: #30D158;
+  --accent-red: #FF453A;
+  --card-shadow: 0 8px 24px -4px rgba(0, 0, 0, 0.4);
+}
+
+body {
+  background-color: var(--bg-main);
+  color: var(--text-primary);
+  font-family: -apple-system, BlinkMacSystemFont, "SF Pro Text", "SF Pro Display", system-ui, sans-serif;
+  letter-spacing: -0.015em;
+  -webkit-tap-highlight-color: transparent;
+  min-height: 100vh;
+  margin: 0;
+  padding: 0;
+}
+
+/* Glassmorphism Surface Apple HIG */
+.apple-glass {
+  background-color: var(--nav-glass);
+  backdrop-filter: blur(20px) saturate(180%);
+  -webkit-backdrop-filter: blur(20px) saturate(180%);
+}
+
+/* Hairline borders Apple HIG */
+.hairline-border {
+  border: 0.5px solid var(--hairline);
+}
+
+.hairline-t {
+  border-top: 0.5px solid var(--hairline);
+}
+
+.hairline-b {
+  border-bottom: 0.5px solid var(--hairline);
+}
+
+.hairline-l {
+  border-left: 0.5px solid var(--hairline);
+}
+
+.hairline-r {
+  border-right: 0.5px solid var(--hairline);
+}
+
+/* Squircle Curvature */
+.squircle-card {
+  border-radius: 20px;
+}
+
+.squircle-btn {
+  border-radius: 12px;
+}
+
+.squircle-chip {
+  border-radius: 9999px;
+}
+
+/* Active touch feedback */
+.ios-tap-active {
+  transition: transform 0.15s cubic-bezier(0.2, 0.8, 0.2, 1), opacity 0.15s ease;
+  user-select: none;
+}
+
+.ios-tap-active:active {
+  transform: scale(0.98);
+  opacity: 0.88;
+}
+
+/* Apple Card Shadow */
+.apple-shadow {
+  box-shadow: var(--card-shadow);
+}
+
+/* Safe Area Inset Helpers */
+.pt-safe {
+  padding-top: max(env(safe-area-inset-top, 0px), 12px);
+}
+
+.pb-safe {
+  padding-bottom: max(env(safe-area-inset-bottom, 0px), 16px);
+}
+
+.pl-safe {
+  padding-left: max(env(safe-area-inset-left, 0px), 16px);
+}
+
+.pr-safe {
+  padding-right: max(env(safe-area-inset-right, 0px), 16px);
+}
+
+/* Custom minimal scrollbar */
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+::-webkit-scrollbar-thumb {
+  background: rgba(142, 142, 147, 0.3);
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: rgba(142, 142, 147, 0.5);
+}
